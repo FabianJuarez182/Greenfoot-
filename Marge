@@ -1,0 +1,50 @@
+public class Marge extends Actor
+{
+    public Marge ()
+    {
+        GreenfootImage myImage = getImage();
+        int MyNewHeight = (int)myImage.getHeight()/2;
+        int MyNewWidth = (int)myImage.getWidth()/2;
+        myImage.scale(MyNewWidth, MyNewHeight);
+        
+    }
+    /**
+     * Act - do whatever the Marge wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act() 
+    {
+        moveAround ();
+        eat ();
+    }    
+    
+    public void moveAround ()
+    {
+        move(4);
+        if (Greenfoot.getRandomNumber(100)<10)
+        {
+            turn(Greenfoot.getRandomNumber(90)-45);
+        }
+        if (getX () <=5 || getX() >= getWorld().getWidth() -5)
+        {
+            turn(180);
+        }
+        if (getY () <=5 || getY() >= getWorld().getHeight() -5)
+        {
+            turn(180);
+        }
+    }
+    
+    public void eat()
+    {
+        Actor homero;
+        homero = getOneObjectAtOffset(0, 0, Homero.class);
+        if (homero != null)
+        {
+            World world;
+            world = getWorld();
+            world.removeObject(homero);
+            Greenfoot.playSound("eating2.wav");
+        }
+    }
+}
