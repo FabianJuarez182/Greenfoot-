@@ -1,0 +1,42 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Esta dona dara mas puntos que una dona comun
+ * @author (Emily Perez) 
+ */
+ 
+public class Dona_oro extends Actor
+{
+    public Dona_oro()
+    {    
+        GreenfootImage myImage = getImage();
+        int MyNewHeight = (int)myImage.getHeight()/4;
+        int MyNewWidth = (int)myImage.getWidth()/4;
+        myImage.scale(MyNewWidth, MyNewHeight);
+    }
+    /**
+     * Act - do whatever the Dona_oro wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act() 
+    {
+        moveAround();
+    }    
+    
+    public void moveAround ()
+    {
+        move (8);
+        if (Greenfoot.getRandomNumber (100)<10);
+        {
+            turn(Greenfoot.getRandomNumber (90)-45);
+        }
+        if (getX () <=5 || getX() >= getWorld().getWidth()-5)
+        {
+            turn (180);
+        }
+        if (getY () <=5 || getY() >= getWorld().getHeight()-5)
+        {
+            turn(180);
+        }
+    }
+}
