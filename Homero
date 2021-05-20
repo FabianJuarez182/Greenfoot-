@@ -1,0 +1,66 @@
+public Homero() #tamaño de Homero
+    {
+        GreenfootImage myImage = getImage();
+        int MyNewHeight = (int)myImage.getHeight()/4;
+        int MyNewWidth = (int)myImage.getWidth()/4;
+        myImage.scale(MyNewWidth, MyNewHeight);
+    }
+    public void act() #Variables
+    {
+       moveAndTurn();
+       eat1();
+       eat2();
+    }
+        
+    public void moveAndTurn() #Movimiento de Homero  
+    {    
+    int y= getY();
+        if (Greenfoot.isKeyDown("right"))
+    {   
+            move(4);
+    }    
+        if (Greenfoot.isKeyDown("left"))
+    {   
+            move(-4);
+    }   
+        if (Greenfoot.isKeyDown("up"))
+    {   
+            y--;
+            y--;
+            y--;
+            y--;
+    }  
+        if (Greenfoot.isKeyDown("down"))
+    { 
+            y++;
+            y++;
+            y++;
+            y++;
+    } 
+    setLocation(getX(),y);
+    }
+    
+    public void eat1() #Comida 1, Dona normal 
+    {
+    Actor dona;
+    dona = getOneObjectAtOffset(0, 0, Dona.class);
+    if (dona != null)
+    {
+        World world;
+        world = getWorld();
+        world.removeObject(dona);
+        Greenfoot.playSound("eating.wav");
+    }
+    }
+     public void eat2() #Comida 2, Dona dorada
+    {
+    Actor donao;
+    donao = getOneObjectAtOffset(0, 0, Dona_oro.class);
+    if (donao != null)
+    {
+        World world;
+        world = getWorld();
+        world.removeObject(donao);
+        Greenfoot.playSound("eating.wav");
+    }
+    }
