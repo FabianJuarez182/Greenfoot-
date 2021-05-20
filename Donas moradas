@@ -1,0 +1,29 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class Dona here.
+ * 
+ * @author (Sara) 
+ * @version (19/05)
+ */
+public class Dona extends Actor
+{
+    /**
+     * Act - do whatever the Dona wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act() 
+    {
+        // Dimensiones dona
+        GreenfootImage myImage = getImage();
+         myImage.scale(150, 150);
+         
+        // Apariciones random
+                move(2);
+                if(Greenfoot.getRandomNumber(100) > 5)
+                {
+                turn(Greenfoot.getRandomNumber(70)-35);
+    }    
+}
+}
+
