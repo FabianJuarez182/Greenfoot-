@@ -1,18 +1,29 @@
-public Homero() #tamaño de Homero
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class Homero here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class Homero extends Actor
+{
+    public Homero() //Tamaño de homero
     {
         GreenfootImage myImage = getImage();
         int MyNewHeight = (int)myImage.getHeight()/4;
         int MyNewWidth = (int)myImage.getWidth()/4;
         myImage.scale(MyNewWidth, MyNewHeight);
     }
-    public void act() #Variables
+    Fondo thisGame;
+    public void act() //Variables
     {
        moveAndTurn();
        eat1();
        eat2();
     }
         
-    public void moveAndTurn() #Movimiento de Homero  
+    public void moveAndTurn() //Movimiento de Homero 
     {    
     int y= getY();
         if (Greenfoot.isKeyDown("right"))
@@ -40,7 +51,7 @@ public Homero() #tamaño de Homero
     setLocation(getX(),y);
     }
     
-    public void eat1() #Comida 1, Dona normal 
+    public void eat1() //Comida 1, Dona normal 
     {
     Actor dona;
     dona = getOneObjectAtOffset(0, 0, Dona.class);
@@ -49,10 +60,12 @@ public Homero() #tamaño de Homero
         World world;
         world = getWorld();
         world.removeObject(dona);
+        thisGame.score++;
         Greenfoot.playSound("eating.wav");
+        Fondo mundo = (Fondo)world;
     }
     }
-     public void eat2() #Comida 2, Dona dorada
+    public void eat2() //Comida 2, Dona dorada
     {
     Actor donao;
     donao = getOneObjectAtOffset(0, 0, Dona_oro.class);
@@ -61,6 +74,10 @@ public Homero() #tamaño de Homero
         World world;
         world = getWorld();
         world.removeObject(donao);
+        thisGame.score++;
         Greenfoot.playSound("eating.wav");
+        Fondo mundo = (Fondo)world;
     }
     }
+
+}
