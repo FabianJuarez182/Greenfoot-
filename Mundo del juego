@@ -1,3 +1,56 @@
-#Hola mundo
-#Este es nuectro proyecto de introduccion a Ingenieria 
-#Este sera una descripcion y codigo de nuestro videojuego
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class Fondo here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class Fondo extends World
+{
+    public static int score = 0; 
+    /**
+     * Constructor for objects of class Fondo.
+     * 
+     */
+    public Fondo()
+    {    
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        super(600, 400, 1); 
+        prepare();
+    }
+    public void act()
+    {
+     showText("Score: " + score, 50, 25);
+    }
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        score = 0;
+        showText("Score: " + score, 50, 25);
+        Dona dona = new Dona();
+        addObject(dona,426,208);
+        dona.setLocation(394,206);
+        Dona_oro dona_oro = new Dona_oro();
+        addObject(dona_oro,394,206);
+        dona_oro.setLocation(150,178);
+        Homero homero = new Homero();
+        addObject(homero,150,178);
+        dona.setLocation(474,206);
+        Marge marge = new Marge();
+        addObject(marge,474,206);
+        dona.setLocation(424,275);
+        dona_oro.setLocation(68,32);
+        homero.setLocation(36,359);
+        dona_oro.setLocation(573,53);
+        dona.setLocation(499,110);
+        dona.setLocation(544,373);
+        dona.setLocation(304,295);
+        dona.setLocation(532,368);
+        dona.setLocation(521,352);
+        dona.setLocation(513,349);
+    }
+}
