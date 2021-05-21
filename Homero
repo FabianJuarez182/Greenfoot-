@@ -75,6 +75,10 @@ public class Homero extends Actor
         world = getWorld();
         world.removeObject(donao);
         thisGame.score++;
+        thisGame.score++;
+        thisGame.score++;
+        thisGame.score++;
+        thisGame.score++;
         Greenfoot.playSound("eating.wav");
         Fondo mundo = (Fondo)world;
     }
