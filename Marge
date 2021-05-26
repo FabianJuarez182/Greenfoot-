@@ -1,5 +1,9 @@
 public class Marge extends Actor
 {
+    /**
+     * Act - do whatever the Marge wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     public Marge ()
     {
         GreenfootImage myImage = getImage();
@@ -44,7 +48,9 @@ public class Marge extends Actor
             World world;
             world = getWorld();
             world.removeObject(homero);
-            Greenfoot.playSound("eating2.wav");
+            Greenfoot.playSound("eating.wav");
+            Greenfoot.delay(20);
+            Greenfoot.setWorld(new EndGameScreen());
         }
     }
 }
