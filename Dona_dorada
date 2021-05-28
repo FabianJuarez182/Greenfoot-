@@ -5,9 +5,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (Emily Perez) 
  */
  
-public class Dona_oro extends Actor
+public class Dona_oro extends Actor //Se creara una clase para la dona y se utilizara en otras pantallas
 {
-    public Dona_oro()
+    public Dona_oro() //Se hara una función para la dona dorada y se definiran su tañamo
     {    
         GreenfootImage myImage = getImage();
         int MyNewHeight = (int)myImage.getHeight()/4;
@@ -18,12 +18,12 @@ public class Dona_oro extends Actor
      * Act - do whatever the Dona_oro wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act() 
+    public void act() // Se hara la funcion para que se mueva constantemente por medio de la funcion moveAround
     {
         moveAround();
     }    
     
-    public void moveAround ()
+    public void moveAround () //Se creara la funcion con los datos para que se mueva sola la dona
     {
         move (8);
         if (Greenfoot.getRandomNumber (100)<10);
