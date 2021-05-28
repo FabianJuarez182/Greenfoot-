@@ -6,13 +6,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (Sara) 
  * @version (19/05)
  */
-public class Dona extends Actor
+public class Dona extends Actor //Sera la funcion publica que vera el usuario para la dona
 {
     /**
      * Act - do whatever the Dona wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act() 
+    public void act() //Funciamiento de la dona con su aparicion random
     {
         // Dimensiones dona
         GreenfootImage myImage = getImage();
