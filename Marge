@@ -1,3 +1,11 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class Marge here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
 public class Marge extends Actor
 {
     /**
@@ -6,10 +14,10 @@ public class Marge extends Actor
      */
     public Marge ()
     {
-        GreenfootImage myImage = getImage();
-        int MyNewHeight = (int)myImage.getHeight()/2;
-        int MyNewWidth = (int)myImage.getWidth()/2;
-        myImage.scale(MyNewWidth, MyNewHeight);
+        GreenfootImage myImage = getImage(); //Obtener imagen 
+        int MyNewHeight = (int)myImage.getHeight()/2; //Tamaño de imagen 
+        int MyNewWidth = (int)myImage.getWidth()/2; //Tamaño de imagen 
+        myImage.scale(MyNewWidth, MyNewHeight); //Escala de imagen de Marge
         
     }
     /**
@@ -18,39 +26,39 @@ public class Marge extends Actor
      */
     public void act() 
     {
-        moveAround ();
-        eat ();
+        moveAround (); //Se mueva aleatoriamente 
+        eat (); //Se come a Homero
     }    
     
-    public void moveAround ()
+    public void moveAround () //Mueve aleatoriamente
     {
-        move(4);
-        if (Greenfoot.getRandomNumber(100)<10)
+        move(4); //Mover 4
+        if (Greenfoot.getRandomNumber(100)<10) 
         {
-            turn(Greenfoot.getRandomNumber(90)-45);
+            turn(Greenfoot.getRandomNumber(90)-45);// Girar a Marge cuando 100 < 10
         }
         if (getX () <=5 || getX() >= getWorld().getWidth() -5)
         {
-            turn(180);
+            turn(180); //Girar 180 grados 
         }
         if (getY () <=5 || getY() >= getWorld().getHeight() -5)
         {
-            turn(180);
+            turn(180);//Girar 180 grados 
         }
     }
     
-    public void eat()
+    public void eat() //Función para que Marge se coma a Homero
     {
         Actor homero;
-        homero = getOneObjectAtOffset(0, 0, Homero.class);
-        if (homero != null)
+        homero = getOneObjectAtOffset(0, 0, Homero.class);  
+        if (homero != null) // Función de lo que hará marge cuando se coma a Homero
         {
             World world;
-            world = getWorld();
-            world.removeObject(homero);
-            Greenfoot.playSound("eating.wav");
-            Greenfoot.delay(20);
-            Greenfoot.setWorld(new EndGameScreen());
+            world = getWorld(); //Obtener el mundo
+            world.removeObject(homero); //Remover a homero
+            Greenfoot.playSound("eating.wav"); //Reproducir sonido de comida
+            Greenfoot.delay(20); //Cuando pasen 1 segundo, que salga el EndGameScreen
+            Greenfoot.setWorld(new EndGameScreen()); //Obtener EndGameScreen
         }
     }
 }
