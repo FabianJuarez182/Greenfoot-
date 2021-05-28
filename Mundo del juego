@@ -21,9 +21,9 @@ public class Fondo extends World
     }
     public void act()
     {
-     showText("Score: " + score, 50, 25);
+     showText("Score: " + score, 50, 25);//Contador
      if(getObjects(Dona.class).isEmpty()){
-         Greenfoot.setWorld(new EndGameScreen(Color.BLUE, Color.WHITE, "YOU WON"));
+         Greenfoot.setWorld(new EndGameScreen(Color.BLUE, Color.WHITE, "YOU WON!!"));//Color de letra y mensaje
          
         }
     }
